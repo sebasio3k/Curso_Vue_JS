@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hola mundo con js</title>
+  </head>
+  <body>
+    <div id="app">
+      <!--INTERPOLACIÓN-->
+      <h1>{{titulo}}</h1>
+
+      <!--v-model-->
+      <input type="text" v-model="nuevaFruta" />
+      <!--eventos
+            -> v-on:click="nombreMetodo"
+            -> @click="nombreMetodo"-->
+      <button @click="agregarFruta" @keyup.enter="agregarFruta">Agregar</button>
+      <!--<button @click="quitarFruta">Quitar</button>-->
+
+      <!--Mostrar propiedades de objeto-->
+      <ul>
+        <li v-for="fruta of frutas">{{fruta}}</li>
+      </ul>
+
+      <!--Mostrar propiedades de objeto INTERPOLACION-->
+      <ul>
+        <li v-for="fruta of frutas2">
+          {{fruta.cantidad}} - {{fruta.nombre}}
+          <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
+        </li>
+      </ul>
+
+      <!--Mostrar propiedades de objeto v-model -->
+      <ul>
+        <li v-for="fruta of frutas2">
+          <input type="number" v-model.number="fruta.cantidad" /> -
+          <input type="text" v-model="fruta.nombre" />
+          <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
+          <button @click="fruta.cantidad++">+</button>
+        </li>
+      </ul>
+      <!--computed-->
+      <h4>TOTAL: {{sumarFrutas}}</h4>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>
+  </body>
+</html>

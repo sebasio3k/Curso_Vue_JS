@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentis JavaScript</title>
+  </head>
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <br />
+    <ul>
+      <li>Primavera</li>
+      <li>Verano</li>
+      <li>Otoño</li>
+      <li>Invierno</li>
+    </ul>
+    <script>
+      // V3 - VAR VS LET
+      var hola = "Hola Mundo";
+      let hello = "Hello World";
+      console.log(hola);
+      console.log(hello);
+      console.log(window);
+      console.log(window.hola);
+      console.log(window.hello);
+      console.log("-------------var-----------------");
+      var musica = "Rock";
+      console.log("Variable musica antes de bloque", musica);
+      {
+        var musica = "Pop";
+        console.log("Variable musica dentro de bloque", musica);
+      }
+      console.log("Variable musica despues de bloque", musica);
+      console.log("-------------let-----------------");
+      let musica2 = "Rock";
+      console.log("Variable musica antes de bloque", musica2);
+      {
+        let musica2 = "Pop";
+        console.log("Variable musica dentro de bloque", musica2);
+      }
+      console.log("Variable musica despues de bloque", musica2);
+
+      // V5 -CADENAS DE TEXTO
+      let nombre = "Albert";
+      let apellido = "Wesker";
+      let lorem =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error exercitationem iste ipsa ducimus nemo numquam est eaque aut consectetur amet, reprehenderit, provident facilis dolorem magnam recusandae fuga quo corporis libero?";
+      //declaración con el constructor
+      let saludo = new String("Hola Mundo");
+      console.log(nombre, apellido, saludo);
+      console.log(
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        nombre.toLowerCase(),
+        apellido.toLowerCase(),
+        lorem.includes("john"),
+        lorem.trim(),
+        //para convertir en arreglo un string
+        lorem.split(",")
+      );
+      //CONCATENACION
+      let saludos = "Hola mi nombre es: " + nombre + " " + apellido;
+      console.log(saludos);
+      // V6 - INTERPOLACION DE VARIABLES - TEMPLATE STRING
+      let salu2 = `Hola mi nombre es: ${nombre} ${apellido}`;
+      console.log(salu2);
+      let ul =
+        "<ul><li>Primavera</li><li>Verano</li>li>Otoño</li><li>Invierno</li></ul>";
+      let ul2 = `<ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ul>`;
+      // V7 - NUMBERS
+      let a = 2;
+      let b = new Number(1);
+      let c = 7.19;
+      let d = "5.6";
+
+      console.log(a, b);
+      //redondea a 1 decimal
+      console.log(c.toFixed(1));
+      console.log(c.toFixed(5));
+      console.log(parseInt(c));
+      console.log(parseFloat(c));
+      console.log(typeof c, typeof d);
+      //hace operacion porque son numbers
+      console.log(a + b);
+      //concatena porque es un number y string
+      console.log(c + d);
+      //convertir cadena a number
+      console.log(c + parseInt(d));
+      console.log(c + Number.parseFloat(d));
+
+      // V8 - BOOLEAN
+      let verdadero = true;
+      let falso = false;
+      let v = Boolean(1);
+      let f = Boolean(0);
+
+      console.log(verdadero, falso, v, f);
+      console.log(typeof verdadero, typeof falso);
+      //verdadero
+      console.log(Boolean(" "));
+      //falso
+      console.log(Boolean(""));
+
+      // V9 - UNDEFINED, NULL, NaN
+      let indefinida;
+      let nulo = null;
+      let noEsNumero = "hola" + 3.7;
+      console.log(indefinida, nulo, noEsNumero);
+
+      // v10 - FUNCIONES
+      //Funciones Declaradas
+      function estoEsUnaFuncion() {
+        console.log("uno");
+        console.log("dos");
+      }
+      function funcionQueDevuelveValor() {
+        return "la funcoon ha retornado esto";
+      }
+      /*Puedes asignar valores por default si no se envian
+      parametros en la invocacion*/
+      function saludar(n = "Desconocido", e = 0) {
+        console.log(`Hola mi nombre es: ${n} y tengo ${e} años`);
+      }
+      //Invocacion
+      estoEsUnaFuncion();
+      estoEsUnaFuncion();
+      let valorFuncion = funcionQueDevuelveValor();
+      console.log(valorFuncion);
+      saludar("Sebas", 23);
+      saludar();
+      //FUNCIONES DECLARADAS VS EXPRESADAS
+      funcionDeclarada();
+      function funcionDeclarada(params) {
+        console.log("Funcion Declarada");
+      }
+      funcionDeclarada();
+      // funcionExpresada();
+      //Expresada (Funcion anonima)
+      const funcionExpresada = function () {
+        console.log(
+          "Esto es una funcion expresada; es decir una funcion que se le ha asignado como valor a una variable; si invocamos esta funcion antes de su declaracion JS nos dirá:..."
+        );
+      };
+    </script>
+  </body>
+</html>
