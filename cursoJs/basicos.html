@@ -150,33 +150,33 @@
 
       // V11 - ARREGLOS
       const arregloVacio = [];
-      const arreglo = [1,true,"hola",["A","B","C",[1,2,3]]];
+      const arreglo = [1, true, "hola", ["A", "B", "C", [1, 2, 3]]];
       console.log(arregloVacio, arreglo);
       console.log(arreglo[2]);
       console.log(arreglo[3][3][2]);
       //Propiedades
       //Otra forma de crear areglos ecma6 2015
-      const e = Array.of("X","Y","Z",1,2,3);
+      const e = Array.of("X", "Y", "Z", 1, 2, 3);
       console.log(e);
       //Declarar y Llenar arreglos:
-      const g = Array(100).fill(false)
-      console.log(g)
-      // en desuso 
-      const h = new Array(1,2,3,true,false);
-      console.log(h)
+      const g = Array(100).fill(false);
+      console.log(g);
+      // en desuso
+      const h = new Array(1, 2, 3, true, false);
+      console.log(h);
       //Metodos
-      const colores = ["rojo","azul","amarillo"]
-      console.log(colores)
-      colores.push("Negro")
-      console.log(colores)
-      colores.pop()
-      console.log(colores)
-      colores.forEach(function (element,index){
+      const colores = ["rojo", "azul", "amarillo"];
+      console.log(colores);
+      colores.push("Negro");
+      console.log(colores);
+      colores.pop();
+      console.log(colores);
+      colores.forEach(function (element, index) {
+        console.log(`<li id="${index}">${element}</li>`);
+      });
+      colores.forEach((element, index) =>
         console.log(`<li id="${index}">${element}</li>`)
-      })
-      colores.forEach( (element,index) => 
-        console.log(`<li id="${index}">${element}</li>`)
-      )
+      );
     </script>
   </body>
 </html>
