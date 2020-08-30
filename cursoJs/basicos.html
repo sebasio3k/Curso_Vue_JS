@@ -249,6 +249,62 @@
       console.log(!false);
       console.log(9 === 9 || "9" === 9); //con que una se cumpla valida
       console.log(9 === 9 && "9" === 9); //las dos condiciones se deben cumplir para validar
+      // V14 - CONDICIONALES
+      //if - else
+      let mayorEdad = 17;
+      if (mayorEdad === 18) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres menor de edad");
+      }
+      //Anidado
+      let hora = 5;
+      if (hora >= 0 && hora <= 5) {
+        console.log("Déjame dormir");
+      } else {
+        if (hora >= 6 && hora <= 11) {
+          console.log("Buenos Días");
+        } else {
+          if (hora >= 12 && hora <= 18) {
+            console.log("Buenas tardes");
+          } else {
+            console.log("Buenas noches");
+          }
+        }
+      }
+      //OPERADOR Ternario (condicion) ? verdadero: falso
+      console.log("Operador Ternario");
+      let eresMayor =
+        mayorEdad >= 18 ? "Eres mayor de Edad" : "Eres menor de Edad";
+      console.log(eresMayor);
+      //Switch case
+      let dia = 20;
+      switch (dia) {
+        case 0:
+          console.log("Domingo");
+          break;
+        case 1:
+          console.log("Lunes");
+          break;
+        case 2:
+          console.log("Martes");
+          break;
+        case 3:
+          console.log("Miércoles");
+          break;
+        case 4:
+          console.log("Jueves");
+          break;
+        case 5:
+          console.log("Viernes");
+          break;
+        case 6:
+          console.log("Sábado");
+          break;
+        default:
+          console.log("El dia no existe");
+          break;
+      }
     </script>
   </body>
 </html>
