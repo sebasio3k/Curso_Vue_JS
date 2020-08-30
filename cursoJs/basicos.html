@@ -177,6 +177,43 @@
       colores.forEach((element, index) =>
         console.log(`<li id="${index}">${element}</li>`)
       );
+      // V12 - OBJETOS
+      const obj = {};
+      console.log(obj);
+      const obj2 = new Object();
+      console.log(obj2);
+      const seb = {
+        //Atributos/Propiedades
+        nombre: "Sebastian",
+        apellido: "Hernandez",
+        edad: 23,
+        pasatiempos: ["idiomas", "videojuegos", "leer"],
+        soltero: true,
+        contacto: {
+          email: "bastianhdezo@gmail.com",
+          twitter: "@algo",
+          movil: "232492492492",
+        },
+        //Metodos
+        saludar: function () {
+          console.log("Hola :)");
+        },
+        decirMiNombre: function () {
+          console.log("Hola me llamo " + this.nombre);
+          console.log(`Hola me llamo ${this.nombre}`);
+        },
+      };
+      console.log(seb["nombre"]);
+      console.log(seb.apellido);
+      console.log(seb.pasatiempos[1]);
+      console.log(seb.contacto.email);
+      seb.saludar();
+      seb.decirMiNombre();
+      //Lista las llaves
+      console.log(Object.keys(seb));
+      //Lista los valores de las propiedades
+      console.log(Object.values(seb));
+      console.log(seb.hasOwnProperty("nombre"));
     </script>
   </body>
 </html>
