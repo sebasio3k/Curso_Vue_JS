@@ -214,6 +214,41 @@
       //Lista los valores de las propiedades
       console.log(Object.values(seb));
       console.log(seb.hasOwnProperty("nombre"));
+      // V13 - TIPOS DE OPERADORES
+      //Aritmeticos + - * / % ()
+      let operacion = 5 + (5 - 10) * 3;
+      let modulo = 5 % 2;
+      //Relacionales > < >= <= == === != !==
+      console.log(8 > 9);
+      console.log(9 > 8);
+      console.log(8 >= 9);
+      console.log(9 >= 8);
+      console.log(7 < 7);
+      console.log(7 <= 7);
+      /*
+    = Asignacion
+    == Comparacion de valores
+    === Comparacion de TIPO DE DATO Y VALOR
+    */
+      console.log(7 == 7);
+      console.log("7" == 7);
+      console.log(0 == false);
+      console.log(7 === 7);
+      console.log("7" === 7);
+      console.log(0 === false);
+      //Incremento o Decremento
+      let inc = 1;
+      //inc =  inc +2;
+      inc += 3;
+      //inc -=3;
+      //inc *=3;
+      //inc /=3;
+      //inc ++;
+      //Logicos ! not, || or, && and
+      console.log(!true); //vuelve contrario
+      console.log(!false);
+      console.log(9 === 9 || "9" === 9); //con que una se cumpla valida
+      console.log(9 === 9 && "9" === 9); //las dos condiciones se deben cumplir para validar
     </script>
   </body>
 </html>
