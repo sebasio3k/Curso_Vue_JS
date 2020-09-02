@@ -390,6 +390,30 @@
 
       let { nombre, apellido, edad } = seb;
       console.log(nombre, edad, apellido);
+      // V19 Objetos Literales
+      let comida = "pastel";
+      let bebida = "awa uwu";
+      const perro = {
+        nombre: "Archi",
+        bebida: bebida,
+        comida: comida,
+        ladrar: function () {
+          console.log("guau guau");
+        },
+      };
+      console.log(perro);
+      perro.ladrar();
+      //Ecmascript 6 2015:
+      const dog = {
+        comida,
+        bebida,
+        raza: "salchicha",
+        ladrar() {
+          console.log("guau guau guau");
+        },
+      };
+      console.log(dog);
+      dog.ladrar();
     </script>
   </body>
 </html>
