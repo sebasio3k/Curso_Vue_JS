@@ -339,6 +339,29 @@
       for (const caracter of cadena) {
         console.log(caracter);
       }
+      // V16 MANEJO DE ERRORES
+      try {
+        console.log("En el try se agrega el código a evaluar");
+        noExiste;
+      } catch (error) {
+        console.log(
+          "Catch -> Captura cualquier error surgido o lanzado en el try"
+        );
+        console.log(error);
+      } finally {
+        console.log(
+          "El bloque finally se ejecutará siempre al final de un bloque try-catch"
+        );
+      }
+      try {
+        let numero = "y";
+        if (isNaN(numero)) {
+          throw new Error("El caracter introducido no es un número");
+        }
+        console.log(numero * numero);
+      } catch (e) {
+        console.log(`Se produjo el siguiente error: ${e}`);
+      }
     </script>
   </body>
 </html>
