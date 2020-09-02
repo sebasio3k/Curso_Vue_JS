@@ -41,29 +41,29 @@
       console.log("Variable musica despues de bloque", musica2);
 
       // V5 -CADENAS DE TEXTO
-      let nombre = "Albert";
-      let apellido = "Wesker";
+      let name = "Albert";
+      let surname = "Wesker";
       let lorem =
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error exercitationem iste ipsa ducimus nemo numquam est eaque aut consectetur amet, reprehenderit, provident facilis dolorem magnam recusandae fuga quo corporis libero?";
       //declaración con el constructor
       let saludo = new String("Hola Mundo");
-      console.log(nombre, apellido, saludo);
+      console.log(name, surname, saludo);
       console.log(
-        nombre.length,
-        apellido.length,
+        name.length,
+        surname.length,
         saludo.length,
-        nombre.toLowerCase(),
-        apellido.toLowerCase(),
+        name.toLowerCase(),
+        surname.toLowerCase(),
         lorem.includes("john"),
         lorem.trim(),
         //para convertir en arreglo un string
         lorem.split(",")
       );
       //CONCATENACION
-      let saludos = "Hola mi nombre es: " + nombre + " " + apellido;
+      let saludos = "Hola mi nombre es: " + name + " " + surname;
       console.log(saludos);
       // V6 - INTERPOLACION DE VARIABLES - TEMPLATE STRING
-      let salu2 = `Hola mi nombre es: ${nombre} ${apellido}`;
+      let salu2 = `Hola mi nombre es: ${name} ${surname}`;
       console.log(salu2);
       let ul =
         "<ul><li>Primavera</li><li>Verano</li>li>Otoño</li><li>Invierno</li></ul>";
@@ -378,6 +378,18 @@
         }
         console.log(numbers[l]);
       }
+      // V18 Destructuracion de objetos
+      //sin destructuring
+      let uno = numbers[0],
+          dos = numbers[1],
+          tres = numbers[2];
+      console.log(uno,dos,tres);
+      //con desctructuring
+      const [one,two,three] = numbers;
+      console.log(one,two,three)
+
+      let {nombre,apellido,edad} = seb;
+      console.log(nombre,edad,apellido)
     </script>
   </body>
 </html>
