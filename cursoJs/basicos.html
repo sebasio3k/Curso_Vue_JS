@@ -469,6 +469,66 @@
       //   mau (){ console.log(this)
       // }};
       // gato.mau();
+
+      // V22 PROTOTIPOS
+      /*POO
+      Clases -> Modelo a seguir
+      Objeto -> instancia de una clase
+      -Atributos -> característica o propiedad del objeto(variables dentro de un objeto)
+      -Métodos -> acciones que un objeto puede realizar (funciones dentro de un obj)
+      */
+      const animal = {
+        nombre: "snoopy",
+        sonar() {
+          console.log("Hago sonidos porque estoi vivo");
+        },
+      };
+      const animal2 = {
+        nombre: "Lola Bunny",
+        sonar() {
+          console.log("Hago sonidos porque estoi vivo");
+        },
+      };
+      console.log(animal);
+      console.log(animal2);
+
+      // //Funcion Constructora
+      // function Animal(no, ge) {
+      //   //Atributos
+      //   this.nombre = no;
+      //   this.genero = ge;
+      //   //Metodos
+      //   this.sonar = function () {
+      //     console.log("Hago sonidos porque estoi vivo");
+      //   };
+      //   this.saludar = function () {
+      //     console.log(`Hola me llamo ${this.nombre}`);
+      //   };
+      // }
+
+      // const bugs = new Animal("Bugs Bunny", "Macho"),
+      //   lucas = new Animal("Pato Lucas", "Macho");
+      // console.log(bugs);
+      // console.log(lucas);
+      // lucas.saludar();
+      //Funcion Constructora donde asignamos los metodos al prototipo, no a la funcion como tal
+      function Animal(no, ge) {
+        //Atributos
+        this.nombre = no;
+        this.genero = ge;
+      }
+      //Metodos agregados al prototipo de la funcion
+      Animal.prototype.sonar = function () {
+        console.log("Hago sonidos porque estoi vivo");
+      };
+      Animal.prototype.saludar = function () {
+        console.log(`Hola me llamo ${this.nombre}`);
+      };
+      const bugs = new Animal("Bugs Bunny", "Macho"),
+        lucas = new Animal("Pato Lucas", "Macho");
+      console.log(bugs);
+      console.log(lucas);
+      lucas.saludar();
     </script>
   </body>
 </html>
