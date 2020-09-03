@@ -431,6 +431,44 @@
       console.log(arr3);
       const arrSpread = [...arr1, ...arr2];
       console.log(arrSpread);
+      // V21 ARROW FUNCTIONS () => {}
+      const salu2s = function () {
+        console.log("hola");
+      };
+      salu2s();
+      const salu2s2 = () => {
+        console.log("hola =>");
+      };
+      salu2s2();
+
+      const salu2s3 = (nom) => console.log(`Hola ${nom}`);
+      salu2s3("sebas");
+
+      const adding = (s, e) => a + b;
+      console.log(adding(1, 2));
+
+      numeros.forEach((ele, ind) =>
+        console.log(`El elemento ${ele} esta en la posicion ${ind}`)
+      );
+
+      function perroo() {
+        console.log(this);
+      }
+      perroo();
+
+      const gato = {
+        nombre: "michi",
+        mau: () => {
+          console.log(this);
+        },
+      };
+      gato.mau();
+      //BUENA PRACTICA (obj literal):
+      // const gato = {
+      //   nombre: "michi",
+      //   mau (){ console.log(this)
+      // }};
+      // gato.mau();
     </script>
   </body>
 </html>
