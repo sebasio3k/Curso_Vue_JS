@@ -529,6 +529,29 @@
       console.log(bugs);
       console.log(lucas);
       lucas.saludar();
+
+      // V23 - HERENCIA
+      //Herencia Prototípica
+      function Cat(nombre, genero, tamanio) {
+        this.super = Animal;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      //Cat esta heredando de Animal
+      Cat.prototype = new Animal();
+      Cat.prototype.constructor = Cat;
+      //Sobreescritura de metodos del prototipo padre en el hijo
+      Cat.prototype.sonar = function () {
+        console.log("Soy un Cat y mi sonido es un miau uwu");
+      };
+      Cat.prototype.maullar = function () {
+        console.log("Miau miau owo");
+      };
+      const kit = new Cat("Kit", "Macho", "chico");
+      console.log(kit);
+      kit.sonar();
+      kit.saludar();
+      kit.maullar();
     </script>
   </body>
 </html>
