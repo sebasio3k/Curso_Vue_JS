@@ -68,11 +68,11 @@
       let ul =
         "<ul><li>Primavera</li><li>Verano</li>li>Otoño</li><li>Invierno</li></ul>";
       let ul2 = `<ul>
-        <li>Primavera</li>
-        <li>Verano</li>
-        <li>Otoño</li>
-        <li>Invierno</li>
-    </ul>`;
+          <li>Primavera</li>
+          <li>Verano</li>
+          <li>Otoño</li>
+          <li>Invierno</li>
+      </ul>`;
       // V7 - NUMBERS
       let a = 2;
       let b = new Number(1);
@@ -123,7 +123,7 @@
         return "la funcoon ha retornado esto";
       }
       /*Puedes asignar valores por default si no se envian
-      parametros en la invocacion*/
+        parametros en la invocacion*/
       function saludar(n = "Desconocido", e = 0) {
         console.log(`Hola mi nombre es: ${n} y tengo ${e} años`);
       }
@@ -227,10 +227,10 @@
       console.log(7 < 7);
       console.log(7 <= 7);
       /*
-    = Asignacion
-    == Comparacion de valores
-    === Comparacion de TIPO DE DATO Y VALOR
-    */
+      = Asignacion
+      == Comparacion de valores
+      === Comparacion de TIPO DE DATO Y VALOR
+      */
       console.log(7 == 7);
       console.log("7" == 7);
       console.log(0 == false);
@@ -472,86 +472,128 @@
 
       // V22 PROTOTIPOS
       /*POO
-      Clases -> Modelo a seguir
-      Objeto -> instancia de una clase
-      -Atributos -> característica o propiedad del objeto(variables dentro de un objeto)
-      -Métodos -> acciones que un objeto puede realizar (funciones dentro de un obj)
-      */
-      const animal = {
-        nombre: "snoopy",
+        Clases -> Modelo a seguir
+        Objeto -> instancia de una clase
+        -Atributos -> característica o propiedad del objeto(variables dentro de un objeto)
+        -Métodos -> acciones que un objeto puede realizar (funciones dentro de un obj)
+        */
+      /*
+        const animal = {
+          nombre: "snoopy",
+          sonar() {
+            console.log("Hago sonidos porque estoi vivo");
+          },
+        };
+        const animal2 = {
+          nombre: "Lola Bunny",
+          sonar() {
+            console.log("Hago sonidos porque estoi vivo");
+          },
+        };
+        console.log(animal);
+        console.log(animal2);
+
+        // //Funcion Constructora
+        // function Animal(no, ge) {
+        //   //Atributos
+        //   this.nombre = no;
+        //   this.genero = ge;
+        //   //Metodos
+        //   this.sonar = function () {
+        //     console.log("Hago sonidos porque estoi vivo");
+        //   };
+        //   this.saludar = function () {
+        //     console.log(`Hola me llamo ${this.nombre}`);
+        //   };
+        // }
+
+        // const bugs = new Animal("Bugs Bunny", "Macho"),
+        //   lucas = new Animal("Pato Lucas", "Macho");
+        // console.log(bugs);
+        // console.log(lucas);
+        // lucas.saludar();
+        //Funcion Constructora donde asignamos los metodos al prototipo, no a la funcion como tal
+        function Animal(no, ge) {
+          //Atributos
+          this.nombre = no;
+          this.genero = ge;
+        }
+        //Metodos agregados al prototipo de la funcion
+        Animal.prototype.sonar = function () {
+          console.log("Hago sonidos porque estoi vivo");
+        };
+        Animal.prototype.saludar = function () {
+          console.log(`Hola me llamo ${this.nombre}`);
+        };
+        const bugs = new Animal("Bugs Bunny", "Macho"),
+          lucas = new Animal("Pato Lucas", "Macho");
+        console.log(bugs);
+        console.log(lucas);
+        lucas.saludar();
+
+        // V23 - HERENCIA
+        //Herencia Prototípica
+        function Cat(nombre, genero, tamanio) {
+          this.super = Animal;
+          this.super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+        //Cat esta heredando de Animal
+        Cat.prototype = new Animal();
+        Cat.prototype.constructor = Cat;
+        //Sobreescritura de metodos del prototipo padre en el hijo
+        Cat.prototype.sonar = function () {
+          console.log("Soy un Cat y mi sonido es un miau uwu");
+        };
+        Cat.prototype.maullar = function () {
+          console.log("Miau miau owo");
+        };
+        const kit = new Cat("Kit", "Macho", "chico");
+        console.log(kit);
+        kit.sonar();
+        kit.saludar();
+        kit.maullar(); */
+
+      // v24 - CLASES
+      class Animal {
+        //Constructor:
+        constructor(nombre, genero) {
+          //Atributos
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        //Metodos
         sonar() {
           console.log("Hago sonidos porque estoi vivo");
-        },
-      };
-      const animal2 = {
-        nombre: "Lola Bunny",
+        }
+        saludar() {
+          console.log(`Hola me llamo ${this.nombre}`);
+        }
+      }
+      //Herencia
+      class doggy extends Animal {
+        constructor(nombre, genero, tamanio) {
+          //Manda a llamar a constructor padre
+          super(nombre, genero);
+          this.tamanio = tamanio;
+        }
         sonar() {
-          console.log("Hago sonidos porque estoi vivo");
-        },
-      };
-      console.log(animal);
-      console.log(animal2);
-
-      // //Funcion Constructora
-      // function Animal(no, ge) {
-      //   //Atributos
-      //   this.nombre = no;
-      //   this.genero = ge;
-      //   //Metodos
-      //   this.sonar = function () {
-      //     console.log("Hago sonidos porque estoi vivo");
-      //   };
-      //   this.saludar = function () {
-      //     console.log(`Hola me llamo ${this.nombre}`);
-      //   };
-      // }
-
-      // const bugs = new Animal("Bugs Bunny", "Macho"),
-      //   lucas = new Animal("Pato Lucas", "Macho");
-      // console.log(bugs);
-      // console.log(lucas);
-      // lucas.saludar();
-      //Funcion Constructora donde asignamos los metodos al prototipo, no a la funcion como tal
-      function Animal(no, ge) {
-        //Atributos
-        this.nombre = no;
-        this.genero = ge;
+          console.log("soy un perro y mi sonido es ladrar");
+        }
+        ladrar() {
+          console.log("guau guau");
+        }
       }
-      //Metodos agregados al prototipo de la funcion
-      Animal.prototype.sonar = function () {
-        console.log("Hago sonidos porque estoi vivo");
-      };
-      Animal.prototype.saludar = function () {
-        console.log(`Hola me llamo ${this.nombre}`);
-      };
-      const bugs = new Animal("Bugs Bunny", "Macho"),
-        lucas = new Animal("Pato Lucas", "Macho");
-      console.log(bugs);
-      console.log(lucas);
-      lucas.saludar();
-
-      // V23 - HERENCIA
-      //Herencia Prototípica
-      function Cat(nombre, genero, tamanio) {
-        this.super = Animal;
-        this.super(nombre, genero);
-        this.tamanio = tamanio;
-      }
-      //Cat esta heredando de Animal
-      Cat.prototype = new Animal();
-      Cat.prototype.constructor = Cat;
-      //Sobreescritura de metodos del prototipo padre en el hijo
-      Cat.prototype.sonar = function () {
-        console.log("Soy un Cat y mi sonido es un miau uwu");
-      };
-      Cat.prototype.maullar = function () {
-        console.log("Miau miau owo");
-      };
-      const kit = new Cat("Kit", "Macho", "chico");
-      console.log(kit);
-      kit.sonar();
-      kit.saludar();
-      kit.maullar();
+      //instancias
+      const mimi = new Animal("Mimi", "Hembra");
+      const scooby = new doggy("Scooby", "Macho", "Gigante");
+      console.log(mimi);
+      console.log(scooby);
+      mimi.saludar();
+      mimi.sonar();
+      scooby.saludar();
+      scooby.sonar();
+      scooby.ladrar();
     </script>
   </body>
 </html>
