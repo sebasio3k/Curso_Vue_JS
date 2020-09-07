@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentis JavaScript</title>
+  </head>
+  <body>
+    <script>
+      // V26 OBJETO CONSOLE
+      console.clear();
+      console.log(console);
+      console.error("Esto es un error");
+      console.warn("Esto es un aviso");
+      console.info("Este es un mensaje informativo");
+      let n = "Seb",
+        ap = "HO",
+        ed = 35;
+
+      console.log(n);
+      console.log(ap);
+      console.log(ed);
+      console.log(n, ap, ed);
+      console.log(`Hola mi nombre es ${n} ${ap} y tengo ${ed} años`);
+      console.log("Hola mi nombre es %n %ap y tengo %ed años", n, ap, ed);
+      //console.clear();
+      console.log(window);
+      console.log(document);
+      console.dir(window);
+      console.dir(document);
+      console.clear();
+      //console.group()
+      console.groupCollapsed("Los cursos del jonmircha en yt");
+      console.log("JS");
+      console.log("NODEJS");
+      console.log("php");
+      console.groupEnd();
+      console.table(Object.entries(console));
+      console.table(Object.entries(console).sort());
+      const numeros = [1, 2, 3, 4, 5];
+      console.table(numeros);
+      const scooby = {
+        nombre: "scooby",
+        tamaño: "Grande",
+        raza: "Gran danez",
+      };
+      console.table(scooby);
+      console.clear();
+      console.time("Cuanto tiempo tarda mi codigo");
+      const vector = Array(10);
+      for (let x = 0; x < vector.length; x++) {
+        vector[x] = x;
+      }
+      console.timeEnd("Cuanto tiempo tarda mi codigo");
+      console.log(vector);
+      console.clear();
+      for (let x = 0; x < 100; x++) {
+        console.count("codigo For");
+        console.log(x);
+      }
+      console.clear();
+      let x = 1,
+        y = 2,
+        pruebaXY = "Se espera que x siempre sea menor que y";
+        console.assert(x<y,[x,y,pruebaXY])
+    </script>
+  </body>
+</html>
