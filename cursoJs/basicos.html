@@ -576,12 +576,22 @@
           //Manda a llamar a constructor padre
           super(nombre, genero);
           this.tamanio = tamanio;
+          this.raza = null;
         }
         sonar() {
           console.log("soy un perro y mi sonido es ladrar");
         }
         ladrar() {
           console.log("guau guau");
+        }
+        static queEres() {
+          console.log("soy un perro");
+        }
+        get getRaza() {
+          return this.raza;
+        }
+        set setRaza(raza) {
+          this.raza = raza;
         }
       }
       //instancias
@@ -594,6 +604,13 @@
       scooby.saludar();
       scooby.sonar();
       scooby.ladrar();
+
+      // V25 METODOS ESTATICOS GETTERS Y SETTERS
+      //Metodo estatico -> aquel que se puede ejecutar sin la necesidad de instanciar una clase
+      doggy.queEres();
+      //Setters y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+      scooby.setRaza = "Gran danez";
+      console.log(scooby.getRaza);
     </script>
   </body>
 </html>
