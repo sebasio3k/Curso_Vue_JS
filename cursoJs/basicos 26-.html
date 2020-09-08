@@ -62,7 +62,32 @@
       let x = 1,
         y = 2,
         pruebaXY = "Se espera que x siempre sea menor que y";
-        console.assert(x<y,[x,y,pruebaXY])
+      console.assert(x < y, [x, y, pruebaXY]);
+      // V27 - OBJETO DATE
+      console.log(Date());
+      let fecha = new Date();
+      console.log(fecha);
+      //Dia de mes
+      console.log(fecha.getDate());
+      //Dia de semana [0,1,2,3,4,5,6] [d,l,m,m,j,v,s]
+      console.log(fecha.getDay());
+      //Num mes [0,1,2,3,4,5,6,7,8,9,10,11]
+      console.log(fecha.getMonth());
+      //Año
+      console.log(fecha.getFullYear());
+      console.log(fecha.getHours());
+      console.log(fecha.getMinutes());
+      console.log(fecha.getSeconds());
+      console.log(fecha.getMilliseconds());
+      console.log(fecha.toDateString());
+      console.log(fecha.toLocaleString());
+      console.log(fecha.toLocaleDateString());
+      console.log(fecha.toLocaleTimeString());
+      console.log(fecha.getTimezoneOffset());
+      //cuantos segundos desde 1 ene 1970;
+      console.log(Date.now());
+      let cumpleSeb = new Date(1966, 10, 27);
+      console.log(cumpleSeb);
     </script>
   </body>
 </html>
