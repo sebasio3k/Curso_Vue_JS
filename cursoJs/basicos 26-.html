@@ -110,6 +110,32 @@
       //Numero aleatorio entre 0 y 1
       console.log(Math.random());
       console.log(Math.trunc(Math.random() * 1000));
+      // V29 OPERADOR CORTOCIRCUITO
+      //Or cuando el valor de la izquierda en la expresion siempre pueda validar a true, es el valor que se cargara por defecto
+      const saludar = (nombre) => {
+        nombre = nombre || "Desconocido";
+        console.log(`Hola ${nombre}`);
+      };
+      saludar();
+      saludar("Sebas");
+      console.log("cadena" || "Valor de la derecha");
+      console.log(19 || "valor de la derecha");
+      console.log([] || "valor de la derecha");
+      console.log({} || "valor de la derecha");
+      console.log(false || "valor de la derecha");
+      console.log(null || "valor de la derecha");
+      console.log(undefined || "valor de la derecha");
+      console.log("" || "valor de la derecha");
+      console.log(-2 || "valor de la derecha");
+      console.log(0 || "valor de la derecha");
+
+      //And Cuando el valor de la izquierda en la expresion siempre pueda validar a false, es el valor que se cargará por defecto
+      console.log(false && "valor de la derecha");
+      console.log(null && "valor de la derecha");
+      console.log(undefined && "valor de la derecha");
+      console.log("" && "valor de la derecha");
+      console.log(-2 && "valor de la derecha");
+      console.log(0 && "valor de la derecha");
     </script>
   </body>
 </html>
