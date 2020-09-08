@@ -136,6 +136,24 @@
       console.log("" && "valor de la derecha");
       console.log(-2 && "valor de la derecha");
       console.log(0 && "valor de la derecha");
+      console.clear();
+
+      // V30 ALERT VONFIRM PROMPT
+      console.log(window);
+      // window.alert("Esto es una alerta")
+      // window.confirm("Hola esto es una confirmacion")
+      // window.prompt("Hola esto es un prompt y le permite al usuario ingresar un valor")
+      // alert("Esto es una alerta")
+      // confirm("Hola esto es una confirmacion")
+      // prompt("Hola esto es un prompt y le permite al usuario ingresar un valor")
+      let alerta = alert("Esto es una alerta"),
+        confirmacion = confirm("Hola esto es una confirmacion"),
+        aviso = prompt(
+          "Hola esto es un prompt y le permite al usuario ingresar un valor"
+        );
+      console.log(alerta); //undefined
+      console.log(confirmacion); //true || false
+      console.log(aviso); // valor || null
     </script>
   </body>
 </html>
