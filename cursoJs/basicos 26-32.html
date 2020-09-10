@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentis JavaScript</title>
+  </head>
+  <body>
+    <script>
+      // V26 OBJETO CONSOLE
+      console.clear();
+      console.log(console);
+      console.error("Esto es un error");
+      console.warn("Esto es un aviso");
+      console.info("Este es un mensaje informativo");
+      let n = "Seb",
+        ap = "HO",
+        ed = 35;
+
+      console.log(n);
+      console.log(ap);
+      console.log(ed);
+      console.log(n, ap, ed);
+      console.log(`Hola mi nombre es ${n} ${ap} y tengo ${ed} años`);
+      console.log("Hola mi nombre es %n %ap y tengo %ed años", n, ap, ed);
+      //console.clear();
+      console.log(window);
+      console.log(document);
+      console.dir(window);
+      console.dir(document);
+      console.clear();
+      //console.group()
+      console.groupCollapsed("Los cursos del jonmircha en yt");
+      console.log("JS");
+      console.log("NODEJS");
+      console.log("php");
+      console.groupEnd();
+      console.table(Object.entries(console));
+      console.table(Object.entries(console).sort());
+      const numeros = [1, 2, 3, 4, 5];
+      console.table(numeros);
+      const scooby = {
+        nombre: "scooby",
+        tamaño: "Grande",
+        raza: "Gran danez",
+      };
+      console.table(scooby);
+      console.clear();
+      console.time("Cuanto tiempo tarda mi codigo");
+      const vector = Array(10);
+      for (let x = 0; x < vector.length; x++) {
+        vector[x] = x;
+      }
+      console.timeEnd("Cuanto tiempo tarda mi codigo");
+      console.log(vector);
+      console.clear();
+      for (let x = 0; x < 100; x++) {
+        console.count("codigo For");
+        console.log(x);
+      }
+      console.clear();
+      let x = 1,
+        y = 2,
+        pruebaXY = "Se espera que x siempre sea menor que y";
+      console.assert(x < y, [x, y, pruebaXY]);
+      // V27 - OBJETO DATE
+      console.log(Date());
+      let fecha = new Date();
+      console.log(fecha);
+      //Dia de mes
+      console.log(fecha.getDate());
+      //Dia de semana [0,1,2,3,4,5,6] [d,l,m,m,j,v,s]
+      console.log(fecha.getDay());
+      //Num mes [0,1,2,3,4,5,6,7,8,9,10,11]
+      console.log(fecha.getMonth());
+      //Año
+      console.log(fecha.getFullYear());
+      console.log(fecha.getHours());
+      console.log(fecha.getMinutes());
+      console.log(fecha.getSeconds());
+      console.log(fecha.getMilliseconds());
+      console.log(fecha.toDateString());
+      console.log(fecha.toLocaleString());
+      console.log(fecha.toLocaleDateString());
+      console.log(fecha.toLocaleTimeString());
+      console.log(fecha.getTimezoneOffset());
+      //cuantos segundos desde 1 ene 1970;
+      console.log(Date.now());
+      let cumpleSeb = new Date(1966, 10, 27);
+      console.log(cumpleSeb);
+      console.clear();
+
+      // V28 OBJETO MATH
+      console.log(Math);
+      console.log(Math.PI);
+      console.log(Math.abs(-7.8));
+      // Redondea a numero entero mayor
+      console.log(Math.ceil(7.2));
+      //Redondea a numero entero menor
+      console.log(Math.floor(7.8));
+      //Redondea segun sea arriba de .5
+      console.log(Math.round(7.5));
+      console.log(Math.round(7.4));
+      //Raiz
+      console.log(Math.sqrt(81));
+      //Potencia base, exponente
+      console.log(Math.pow(2, 5));
+      //Indicador de numero negativo: -1 positivo: 1 o 0:0
+      console.log(Math.sign(-5));
+      //Numero aleatorio entre 0 y 1
+      console.log(Math.random());
+      console.log(Math.trunc(Math.random() * 1000));
+      // V29 OPERADOR CORTOCIRCUITO
+      //Or cuando el valor de la izquierda en la expresion siempre pueda validar a true, es el valor que se cargara por defecto
+      const saludar = (nombre) => {
+        nombre = nombre || "Desconocido";
+        console.log(`Hola ${nombre}`);
+      };
+      saludar();
+      saludar("Sebas");
+      console.log("cadena" || "Valor de la derecha");
+      console.log(19 || "valor de la derecha");
+      console.log([] || "valor de la derecha");
+      console.log({} || "valor de la derecha");
+      console.log(false || "valor de la derecha");
+      console.log(null || "valor de la derecha");
+      console.log(undefined || "valor de la derecha");
+      console.log("" || "valor de la derecha");
+      console.log(-2 || "valor de la derecha");
+      console.log(0 || "valor de la derecha");
+
+      //And Cuando el valor de la izquierda en la expresion siempre pueda validar a false, es el valor que se cargará por defecto
+      console.log(false && "valor de la derecha");
+      console.log(null && "valor de la derecha");
+      console.log(undefined && "valor de la derecha");
+      console.log("" && "valor de la derecha");
+      console.log(-2 && "valor de la derecha");
+      console.log(0 && "valor de la derecha");
+      console.clear();
+
+      // V30 ALERT VONFIRM PROMPT
+      //console.log(window);
+      // window.alert("Esto es una alerta")
+      // window.confirm("Hola esto es una confirmacion")
+      // window.prompt("Hola esto es un prompt y le permite al usuario ingresar un valor")
+      // alert("Esto es una alerta")
+      // confirm("Hola esto es una confirmacion")
+      // prompt("Hola esto es un prompt y le permite al usuario ingresar un valor")
+      // let alerta = alert("Esto es una alerta"),
+      //   confirmacion = confirm("Hola esto es una confirmacion"),
+      //   aviso = prompt(
+      //     "Hola esto es un prompt y le permite al usuario ingresar un valor"
+      //   );
+      //console.log(alerta); //undefined
+      //console.log(confirmacion); //true || false
+      //console.log(aviso); // valor || null
+
+      // V31 EXPRESIONES REGULARES
+      let cadena =
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, tempore iure similique iste eius culpa ducimus aliquid earum id quod nisi sequi animi necessitatibus, laborum aspernatur omnis vel temporibus iusto.";
+      let expReg = new RegExp("lorem", "ig");
+      let expReg2 = /Lorem[0-9]/;
+      console.log(expReg.test(cadena)); //return T||F
+      console.log(expReg2.exec(cadena)); //return [info]
+
+      // V32 FUNCIONES ANONIMAS AUTOEJECUTADAS
+      (function () {
+        console.log("Mi primera IIFE");
+      })();
+
+      (function (d, w, c) {
+        console.log("Mi segunda IIFE");
+        console.log(d);
+        c.log(w);
+        c.log("Este es un console.log");
+      })(document, window, console);
+      /*
+      CLASICA
+      (function (){})();
+      
+      CROCKFORT
+      ((function (){})();)
+      
+      UNARIA
+      +function (){})();
+      
+      FACEBOOK
+      !function (){}();
+      */
+    </script>
+  </body>
+</html>
